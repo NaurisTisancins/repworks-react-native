@@ -1,8 +1,8 @@
 /** State Types */
 export interface IState {
   routines?: IRoutine[];
-  selectedRoutine: IRoutine;
-  selectedWorkout: IWorkout;
+  selectedRoutine?: IRoutine;
+  selectedWorkout?: IWorkout;
   isLoading: boolean;
   error?: IError;
   /** State functions */

@@ -5,10 +5,8 @@ import { WorkoutList } from '../components/workout-list.component';
 import { RoutinesContext } from '../../../services/routines.service/routines.context';
 import {
   HomeStackNavigationProps,
-  HomeStackRouteProps,
   HomeStackScreens,
   RoutineTabScreens,
-  SelectedRoutineStackNavigationProps,
   SelectedRoutineStackRouteProps,
   SelectedRoutineStackScreens,
 } from '../../../infrastructure/navigation/types';

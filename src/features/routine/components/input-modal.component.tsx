@@ -2,7 +2,6 @@ import React, { Dispatch, FC, useEffect, useRef } from 'react';
 import { Formik, FormikProps } from 'formik';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { AppContainer } from '../../../components/safe-area/app-container.component';
-import { Spacer } from '../../../components/spacer/spacer.component';
 import { SecondaryButton, ButtonTitle, FormContainer } from './routine.styles';
 import uuid from 'react-native-uuid';
 import { InputLabel, FormInputField } from '../components/routine.styles';
@@ -76,7 +75,6 @@ export const InputModal: FC<Props> = ({ closeModal, title, func }) => {
               <SecondaryButton onPress={() => handleSubmit()}>
                 <ButtonTitle>Save</ButtonTitle>
               </SecondaryButton>
-              <Spacer position='bottom' size='large' />
             </>
           )}
         </Formik>
