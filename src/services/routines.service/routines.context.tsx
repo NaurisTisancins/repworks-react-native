@@ -73,6 +73,7 @@ export const RoutinesContextProvider: FC<Props> = ({ children }) => {
         createRoutine,
         updateRoutine,
         addExercise,
+        addWorkout,
         createWorkout,
         updateWorkout,
         selectWorkout,

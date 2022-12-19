@@ -49,9 +49,9 @@ export const updateWorkout = (state: IState, { type, payload }: IAction) => {
     const index = state.selectedRoutine?.workoutPlan.findIndex((plan) => {
       return plan.id === draft.selectedWorkout?.id;
     });
-    // if (index && draft.selectedRoutine && draft.selectedWorkout) {
-    draft.selectedRoutine.workoutPlan[index] = draft.selectedWorkout;
-    // }
+    if (index && draft.selectedRoutine && draft.selectedWorkout) {
+      draft.selectedRoutine.workoutPlan[index] = draft.selectedWorkout;
+    }
   });
 };
 
