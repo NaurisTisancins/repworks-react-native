@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Button = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.brand.primary};
   color: ${(props) => props.theme.colors.text.primary};
   margin-bottom: ${(props) => props.theme.sizes[0]};
@@ -14,7 +14,7 @@ export const Button = styled(TouchableOpacity)`
 
 export const FormButton = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.brand.primary};
   color: ${(props) => props.theme.colors.text.primary};
   margin-bottom: ${(props) => props.theme.sizes[0]};
@@ -25,7 +25,7 @@ export const FormButton = styled(TouchableOpacity)`
 
 export const DisabledFormButton = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.ui.disabled};
   color: ${(props) => props.theme.colors.text.primary};
   margin-bottom: ${(props) => props.theme.sizes[0]};
@@ -36,7 +36,7 @@ export const DisabledFormButton = styled(TouchableOpacity)`
 
 export const SecondaryFormButton = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.brand.secondary};
   color: ${(props) => props.theme.colors.text.primary};
   margin-bottom: ${(props) => props.theme.sizes[0]};
@@ -47,7 +47,7 @@ export const SecondaryFormButton = styled(TouchableOpacity)`
 
 export const PrimaryButton = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.brand.primary};
   color: ${(props) => props.theme.colors.text.primary};
   margin-bottom: ${(props) => props.theme.sizes[0]};
@@ -58,7 +58,7 @@ export const PrimaryButton = styled(TouchableOpacity)`
 
 export const SecondaryButton = styled(TouchableOpacity)`
   height: ${(props) => props.theme.sizes[3]};
-  width: 70%;
+  width: 250px;
   background-color: ${(props) => props.theme.colors.brand.secondary};
   color: ${(props) => props.theme.colors.text.primary};
   border-radius: ${(props) => props.theme.sizes[0]};
@@ -83,7 +83,7 @@ export const ExerciseContainer = styled.View`
   align-self: stretch;
 `;
 
-export const WorkoutListContainer = styled.View`
+export const UtilityContainer = styled.View`
   padding: ${(props) => props.theme.sizes[0]};
   align-self: stretch;
 `;

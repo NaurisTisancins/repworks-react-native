@@ -1,17 +1,21 @@
-import React from "react";
-import { Icon } from "@rneui/themed";
+import React, { FC } from 'react';
+import { Icon } from '@rneui/themed';
 
 import {
   FormContainer,
   WorkoutFormCardContainer as CardContainer,
   WorkoutFormCardTitle as CardTitle,
   WorkoutFormCardTitleContainer as TitleContainer,
-} from "./workout.styles";
-import { WorkoutForm } from "./workout-form.component";
+} from './workout.styles';
+import { WorkoutForm } from './workout-form.component';
 
-export const WorkoutFormCard = ({ title }) => {
+interface IWorkoutFormCardProps {
+  title: string;
+}
+
+export const WorkoutFormCard: FC<IWorkoutFormCardProps> = ({ title }) => {
   const onClick = () => {
-    console.log("Hello from workout form card");
+    console.log('Hello from workout form card');
   };
   return (
     <CardContainer>

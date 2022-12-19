@@ -33,7 +33,6 @@ export const RoutinesContextProvider: FC<Props> = ({ children }) => {
   }; //CREATE Routine
 
   const selectRoutine = (data: IRoutine['id']) => {
-    console.log({ data });
     dispatch({ type: ActionTypes.SELECT_ROUTINE, payload: data });
   }; // SELECT Routine
 
@@ -42,21 +41,20 @@ export const RoutinesContextProvider: FC<Props> = ({ children }) => {
   }; // UPDATE Routine
 
   // Workout CRUD
-  const selectWorkout = (data?: IWorkout['id']) => {
-    if (data) {
-      dispatch({ type: ActionTypes.SELECT_WORKOUT, payload: data });
-    } else {
-      dispatch({ type: ActionTypes.SELECT_WORKOUT, payload: null });
-    }
+  const selectWorkout = (data: IWorkout['id']) => {
+    dispatch({ type: ActionTypes.SELECT_WORKOUT, payload: data });
   }; // Set a workout as selectedWorkout
 
   const createWorkout = async (data: IWorkout) => {
     dispatch({ type: ActionTypes.ADD_WORKOUT, payload: data });
-    dispatch({ type: ActionTypes.SELECT_WORKOUT, payload: data });
   }; // create a new Workout
 
   const addExercise = (data: IExercise) => {
     dispatch({ type: ActionTypes.ADD_EXERCISE, payload: data });
+  };
+
+  const addWorkout = (data: IWorkout) => {
+    dispatch({ type: ActionTypes.ADD_WORKOUT, payload: data });
   };
 
   const updateWorkout = () => {
@@ -75,6 +73,7 @@ export const RoutinesContextProvider: FC<Props> = ({ children }) => {
         createRoutine,
         updateRoutine,
         addExercise,
+        addWorkout,
         createWorkout,
         updateWorkout,
         selectWorkout,

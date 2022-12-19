@@ -1,8 +1,8 @@
 /** State Types */
 export interface IState {
   routines?: IRoutine[];
-  selectedRoutine: IRoutine;
-  selectedWorkout: IWorkout;
+  selectedRoutine?: IRoutine;
+  selectedWorkout?: IWorkout;
   isLoading: boolean;
   error?: IError;
   /** State functions */
@@ -10,6 +10,7 @@ export interface IState {
   createRoutine: (data: IRoutine) => void;
   updateRoutine: () => void;
   addExercise: (data: IExercise) => void;
+  addWorkout: (data: IWorkout) => void;
   createWorkout: (data: IWorkout) => void;
   updateWorkout: () => void;
   selectWorkout: (id: IRoutine['id']) => void;

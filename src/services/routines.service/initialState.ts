@@ -51,5 +51,5 @@ export const initialState: IState = {
   createWorkout: () => {},
   updateWorkout: () => {},
   selectWorkout: () => {},
-  saveWorkoutList: () => {},
+  getWorkoutPlan: () => {},
 };

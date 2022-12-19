@@ -1,7 +1,7 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
 import { Text, ScrollView, Modal } from 'react-native';
 import {
-  WorkoutListContainer,
+  UtilityContainer,
   SecondaryButton,
   ButtonTitle,
 } from './routine.styles';
@@ -27,6 +27,7 @@ export const WorkoutList: FC<Props> = ({ navigate, edit, routineId }) => {
   const {
     selectedRoutine,
     selectedWorkout,
+    selectWorkout,
     selectRoutine,
     getWorkoutPlan,
     createWorkout,
@@ -52,6 +53,15 @@ export const WorkoutList: FC<Props> = ({ navigate, edit, routineId }) => {
     setModalVisible(false);
   };
 
+  const selectWorkoutAndNavigate = (workoutId: string) => {
+    selectWorkout(workoutId);
+    if (selectedWorkout?.exercises.length === 0) {
+      navigate();
+      return;
+    }
+    navigation.navigate(SelectedRoutineStackScreens.WorkoutScreen);
+  };
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
       <Modal
@@ -67,34 +77,40 @@ export const WorkoutList: FC<Props> = ({ navigate, edit, routineId }) => {
           closeModal={setModalVisible}
           title='Workout Name'
           func={createAndSelectWorkout}
-          // navBarFunc={toggleModal}
-          // icon={'arrow-left-bold'}
         />
       </Modal>
-      <WorkoutListContainer>
+      <UtilityContainer>
         {selectedRoutine &&
         selectedRoutine.workoutPlan &&
         selectedRoutine.workoutPlan.length ? (
           selectedRoutine.workoutPlan.map((workout: IWorkout) => {
             return (
-              <WorkoutListContainer key={workout.id}>
+              <UtilityContainer key={workout.id}>
                 <WorkoutCard
                   workout={workout}
-                  openWorkout={() =>
-                    navigation.navigate(
-                      SelectedRoutineStackScreens.WorkoutScreen
-                    )
-                  }
+                  openWorkout={() => {
+                    selectWorkoutAndNavigate(workout.id);
+                  }}
                 />
-              </WorkoutListContainer>
+              </UtilityContainer>
             );
           })
         ) : (
-          <WorkoutListContainer style={{ alignItems: 'center' }}>
-            <Text>There are no workouts in this routine</Text>
-          </WorkoutListContainer>
+          <>
+            <UtilityContainer style={{ alignItems: 'center' }}>
+              <Text>There are no workouts in this routine</Text>
+            </UtilityContainer>
+
+            <SecondaryButton
+              onPress={() => {
+                setModalVisible(true);
+              }}
+            >
+              <ButtonTitle>ADD A WORKOUT</ButtonTitle>
+            </SecondaryButton>
+          </>
         )}
-      </WorkoutListContainer>
+      </UtilityContainer>
 
       {edit && (
         <SecondaryButton

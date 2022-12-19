@@ -1,9 +1,13 @@
 import React, { FC, useContext } from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { AppContainer } from '../../../components/safe-area/app-container.component';
 import { NavigationBar } from '../../../components/navigation-bar/navigation-bar.component';
 import { WorkoutFormList } from '../components/workout-form-list.component';
-import { ExerciseFormListContainer } from '../components/workout.styles';
+import {
+  ExerciseFormListContainer,
+  FormButton,
+  FormButtonLabel,
+} from '../components/workout.styles';
 import { RoutinesContext } from '../../../services/routines.service/routines.context';
 import { useNavigation } from '@react-navigation/native';
 import { SelectedRoutineStackNavigationProps } from '../../../infrastructure/navigation/types';
@@ -30,6 +34,9 @@ export const WorkoutScreen: FC = () => {
           <WorkoutFormList />
         </ExerciseFormListContainer>
       </ScrollView>
+      <FormButton>
+        <FormButtonLabel>Edit</FormButtonLabel>
+      </FormButton>
     </AppContainer>
   );
 };

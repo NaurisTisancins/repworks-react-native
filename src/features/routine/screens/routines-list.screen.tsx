@@ -25,7 +25,6 @@ import {
 } from '../../../infrastructure/navigation/types';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { Spacer } from '../../../components/spacer/spacer.component';
 
 type RoutineListNavigationProps = CompositeNavigationProp<
   StackNavigationProp<
@@ -135,7 +134,6 @@ export const RoutinesListScreen = () => {
       <PrimaryButton onPress={() => setModalVisible(true)}>
         <ButtonTitle variant='label'>Create Routine</ButtonTitle>
       </PrimaryButton>
-      <Spacer position='bottom' size='large' />
     </AppContainer>
   );
 };

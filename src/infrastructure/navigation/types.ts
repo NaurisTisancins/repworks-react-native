@@ -64,7 +64,9 @@ export type SelectedRoutineStackScreenParams = {
   };
   [SelectedRoutineStackScreens.WorkoutScreen]: undefined;
 
-  [SelectedRoutineStackScreens.SelectedWorkout]: undefined;
+  [SelectedRoutineStackScreens.SelectedWorkout]: {
+    id?: string;
+  };
 };
 
 export type SelectedRoutineStackScreenProps<
