@@ -18,7 +18,7 @@ import {
 } from '../components/routine.styles';
 
 export const SelectedRoutineScreen: FC = () => {
-  const { selectWorkout, updateRoutine, isLoading, error } =
+  const { selectWorkout, addWorkout, updateRoutine, isLoading, error } =
     useContext(RoutinesContext);
   const navigation = useNavigation<HomeStackNavigationProps>();
   const route =
@@ -36,6 +36,8 @@ export const SelectedRoutineScreen: FC = () => {
       params: { screen: SelectedRoutineStackScreens.SelectedWorkout },
     });
   };
+
+  // const addWorkoutToRoutine = () => {};
 
   const handleOnSubmit = () => {
     updateRoutine();

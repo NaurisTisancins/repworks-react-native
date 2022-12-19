@@ -10,6 +10,7 @@ export interface IState {
   createRoutine: (data: IRoutine) => void;
   updateRoutine: () => void;
   addExercise: (data: IExercise) => void;
+  addWorkout: (data: IWorkout) => void;
   createWorkout: (data: IWorkout) => void;
   updateWorkout: () => void;
   selectWorkout: (id: IRoutine['id']) => void;

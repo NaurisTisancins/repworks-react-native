@@ -53,6 +53,15 @@ export const WorkoutList: FC<Props> = ({ navigate, edit, routineId }) => {
     setModalVisible(false);
   };
 
+  const selectWorkoutAndNavigate = (workoutId: string) => {
+    selectWorkout(workoutId);
+    if (selectedWorkout?.exercises.length === 0) {
+      navigate();
+      return;
+    }
+    navigation.navigate(SelectedRoutineStackScreens.WorkoutScreen);
+  };
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
       <Modal
@@ -80,10 +89,7 @@ export const WorkoutList: FC<Props> = ({ navigate, edit, routineId }) => {
                 <WorkoutCard
                   workout={workout}
                   openWorkout={() => {
-                    selectWorkout(workout.id);
-                    navigation.navigate(
-                      SelectedRoutineStackScreens.WorkoutScreen
-                    );
+                    selectWorkoutAndNavigate(workout.id);
                   }}
                 />
               </UtilityContainer>

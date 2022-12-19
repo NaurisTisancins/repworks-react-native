@@ -23,10 +23,10 @@ export const WorkoutFormList = () => {
     setModalVisible(false);
   };
 
-  useEffect(() => {
-    console.log(selectedWorkout);
-    console.log(selectedRoutine);
-  }, []);
+  // useEffect(() => {
+  //   console.log('SELECTED WRK', selectedWorkout);
+  //   console.log('SELECTED RTN', selectedRoutine);
+  // }, []);
 
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
